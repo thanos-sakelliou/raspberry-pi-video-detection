@@ -1,49 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>Evaluation of object detection techniques on Embedded Systems</title>
 </head>
 <body>
-<h2>Your Project Title Here</h2>
+<h2>Evaluation of object detection techniques on Embedded Systems</h2>
 
-Student(s): ???;
-Supervisor(s): ???;
-Semester: 2017-2018;
+Student(s): Florian Debrauwer, Thanos Sakelliou;
+Supervisor(s): Alexia Briassouli;
+Semester: 2019-2020;
 
 <figure><img style="float: left; padding-right: 20px;"
-src="http://<url to image>" alt="" width="458" height="300" />
-<figcaption>Fig 1. - General image that illustrates overall project
+src="https://raw.githubusercontent.com/thanos-sakelliou/raspberry-pi-video-detection/master/2019_Sakelliou_img_1.png" alt="" width="458" height="300" />
+<figcaption>Fig 1. - object\people recognition example
 </figcaption>
 </figure>
 
 <h4>Problem statement and motivation:</h4>
-<p align=”justify”>???.</p>
+<p align=”justify”>In the last few years,There has been a lot of focus on how to get the highest performance with deep learning in object recognition. However, as the Internet of Things
+becomes more prevalent, computationally efficient models are on the rise too.</p>
+<p align=”justify”>
+IoT devises including smartphones, embedded systems and Raspberry Pi(which we are using in this project) have limited capabilities
+but it could still be worth executing these efficient DL models locally. Indeed, it could help improving
+the latency as there is no round trip to a server. Also, as a lot of people becomes more aware of privacy, keeping the
+data in the device is a positive point. Other elements are the connectivity and power consumption. If run locally, these
+models would not rely on the network of the user. Deep Neural networks are also hungry and consume a lot of power, thus, making
+models more efficient can be much more affordable to run.
+</p>
+For all these reasons, we are curious about how well deep learning models perform on devices with hardware limitations.
+There is a bunch of practical applications, from fancy drone to autonomous driving cars, smart city applications, elder
+and infant care, etc.
+More specifically, we are using a couple of state-of-the-art models on the new Raspberry Pi 4 Model B with the portable Google Coral TPU, to test our hypothesis.
+</p>
 
-<figure><img style="text-align: center;" src="http://<url to image>" alt="" />
-<figcaption>Fig 2. - ???.
+<figure><img style="text-align: center;" src="https://raw.githubusercontent.com/thanos-sakelliou/raspberry-pi-video-detection/master/2019_Sakelliou_img_2.png" alt=""  width="1080"     />
+<figcaption>Fig 2. - Hardware of the project, and data flow.
 </figcaption>
 </figure>
 
-<figure><img style="text-align: center;" src="http://<url to image>" alt="" />
-<figcaption>Fig 3. - ???. 
-</figcaption>
-</figure>
 
 <h4>Research questions/hypotheses:</h4>
 <ul>
-<li>??? ?</li>
-<li>??? ?</li>
-<li>??? ?</li>
+<li>How classic Computer vision algorithms compare (in terms of performance and usability) with new optimized Deep Learning Techniques run on new low-cost IoT devices like Raspberry Pi 4?</li>
+<li>Have these devices reached enough processing power, and state-of-the-art DL models enough optimization on object detection/recognition tasks, to produce usable results? (ex. for Smart city applications, Elder or infant care)</li>
 </ul>
 
 <h4>Main outcomes:</h4>
 <ul>
-<li>???.</li>
-<li>???.</li>
+<li>At the moment, we have run a computer vision algorithm based on background subtraction. Even if this approach is simple,
+it is a good starting point as the computing requirement are pretty low. It will be the first model we will implement in
+the raspberry pi.</li>
 </ul>
 
 <h4>References:</h4>
-Kitano, H., Asada, M., Kuniyoshi, Y., Noda, I., &amp; Osawa, E. (1997). Robocup: the robot world cup initiative. Proceedings of the first international conference on Autonomous agents, 340-347.
+
+Wu, B., Dai, X., Zhang, P., Wang, Y., Sun, F., Wu, Y., ... &amp; Keutzer, K. (2019). Fbnet: Hardware-aware efficient convnet design via differentiable neural architecture search. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 10734-10742).
+
+Hadidi, R., Cao, J., Ryoo, M. S., &amp; Kim, H. (2019). Collaborative Execution of Deep Neural Networks on Internet of Things Devices. arXiv preprint arXiv:1901.02537. 
+
+Howard, A. G., Zhu, M., Chen, B., Kalenichenko, D., Wang, W., Weyand, T., ... &amp; Adam, H. (2017). Mobilenets: Efficient convolutional neural networks for mobile vision applications. arXiv preprint arXiv:1704.04861.
+
+Iandola, F., &amp; Keutzer, K. (2017, October). Small neural nets are beautiful: enabling embedded systems with small deep-neural-network architectures. In Proceedings of the Twelfth IEEE/ACM/IFIP International Conference on Hardware/Software Codesign and System Synthesis Companion (p. 1). ACM.
 
 <h4>Downloads:</h4>
 <a href=”???” target=”_blank”>Final report</a>

@@ -2,12 +2,13 @@
 import logging
 import pathlib
 import os
+from pathlib import Path
 
 # lib
 import numpy as np
 import tensorflow as tf
 
-from data import __path__ as rpi_deep_pantilt_path
+# from data import __path__ as project_path
 from util.label import create_category_index_from_labelmap
 from util.visualization import visualize_boxes_and_labels_on_image_array
 
@@ -15,7 +16,7 @@ from util.visualization import visualize_boxes_and_labels_on_image_array
 class SSDMobileNet_V3_Coco_EdgeTPU_Quant(object):
 
     EDGETPU_SHARED_LIB = 'libedgetpu.so.1'
-    PATH_TO_LABELS = rpi_deep_pantilt_path[0] + '/mscoco_label_map.pbtxt'
+    PATH_TO_LABELS = str(Path().absolute()) + '/data/mscoco_label_map.pbtxt'
 
     def __init__(
         self,
@@ -170,7 +171,7 @@ class SSDMobileNet_V3_Coco_EdgeTPU_Quant(object):
 
 class SSDMobileNet_V3_Small_Coco_PostProcessed(object):
 
-    PATH_TO_LABELS = rpi_deep_pantilt_path[0] + '/mscoco_label_map.pbtxt'
+    PATH_TO_LABELS = str(Path().absolute()) + '/data/mscoco_label_map.pbtxt'
 
     def __init__(
         self,

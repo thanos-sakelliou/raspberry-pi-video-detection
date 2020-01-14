@@ -32,7 +32,9 @@ def run_detect(vs, model):
         #model requires 320x320 and has [352, 288]
         required_res = (320, 320)
         
-        scale_percent = required_res[0] * 100/ frame.shape[0]
+        #FOR UPSCALE
+        
+#         scale_percent = required_res[0] * 100/ frame.shape[0]
 #         
 #         height = required_res[0]
 #         width = int(frame.shape[1] * scale_percent / 100)
@@ -44,6 +46,7 @@ def run_detect(vs, model):
 #         cropped_frame = resized_frame[:, 0:required_res[1]]
 
 
+        #DOWNSCALE AND PATCHING
 
         scale_percent = required_res[0] * 100/ frame.shape[1]
         
@@ -65,11 +68,6 @@ def run_detect(vs, model):
             borderType=cv2.BORDER_CONSTANT,
             value=[0, 0, 0]
         )
-                
-        
-        
-#         frame = cv2.resize(frame, (320, 320))
-        
         
         prediction = model.predict(cropped_frame)
         overlay = model.create_overlay(
@@ -134,10 +132,6 @@ def list_labels(loglevel):
     print([x['name'] for x in model.category_index.values()])
 
 
-@cli.group()
-def test():
-    pass
-
 
 def main():
     cli()
@@ -145,3 +139,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

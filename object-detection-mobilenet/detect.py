@@ -68,6 +68,15 @@ def run_detect(vs, model):
             borderType=cv2.BORDER_CONSTANT,
             value=[0, 0, 0]
         )
+#         
+#         img = cv2.imread("regular.jpg")
+#         img = cv2.imread("no_background.jpg")
+#  
+#         prediction = model.predict(img)
+#         overlay = model.create_overlay(
+#         img, prediction)
+# 
+#         cv2.imshow(stream_name, overlay)
         
         prediction = model.predict(cropped_frame)
         overlay = model.create_overlay(

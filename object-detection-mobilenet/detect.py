@@ -25,14 +25,6 @@ def run_detect(vs, model):
     fps_counter = 0
     stream_name = "Stream object detection"
     
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(3,3))
-    substractor = cv2.bgsegm.createBackgroundSubtractorGMG()
-
-    substractor.setBackgroundPrior(0.65) # Background prior probability:
-    substractor.setDecisionThreshold(0.65) # Decision threshold
-    substractor.setDefaultLearningRate(0.5) #Learning rate
-    substractor.setSmoothingRadius(40) #moothing radius
-    
     while True:
         read, frame = vs.read()
         
@@ -74,22 +66,6 @@ def run_detect(vs, model):
             borderType=cv2.BORDER_CONSTANT,
             value=[0, 0, 0]
         )
-        
-        move_rect = gaussian_seg(cropped_frame, kernel, substractor)
-        
-#         img = cv2.imread('lena.jpg')
-#         mask = cv2.imread('mask.png',0)
-#         res = cv2.bitwise_and(img,img,mask = mask)
-        
-#
-#         img = cv2.imread("regular.jpg")
-#         img = cv2.imread("no_background.jpg")
-#  
-#         prediction = model.predict(img)
-#         overlay = model.create_overlay(
-#         img, prediction)
-# 
-#         cv2.imshow(stream_name, overlay)
         
         prediction = model.predict(cropped_frame)
         overlay = model.create_overlay(
@@ -258,8 +234,8 @@ def run_detect_on_video(vs, model, motion_detection_type):
                     overlay = model.create_overlay(
                         ready_img_part, prediction)
                     frame[y1:y2, x1:x2] = overlay
-                else:
-                    print("not processed frame: ", ready_img_part.shape)
+#                 else:
+#                     print("not processed frame: ", ready_img_part.shape)
             
         cv2.imshow(stream_name, frame)
         
